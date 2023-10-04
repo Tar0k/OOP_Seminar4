@@ -1,16 +1,16 @@
 ﻿
 
-namespace OOP_Seminar3;
+namespace OOP_Seminar4;
 
 public class LearningGroupService(List<Group> groups)
 {
-    public void RemoveByName(string name)
+    public void RemoveById(int id)
     {
         foreach (var group in groups)
         {
             foreach (var student in group)
             {
-                if (student.FullName == name) group.Remove();
+                if (student.Id == id) group.Remove();
             }
         }
     }

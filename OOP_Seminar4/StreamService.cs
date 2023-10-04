@@ -1,4 +1,4 @@
-﻿namespace OOP_Seminar3;
+﻿namespace OOP_Seminar4;
 
 public class StreamService
 {

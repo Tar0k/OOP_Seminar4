@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 
-namespace OOP_Seminar3;
+namespace OOP_Seminar4;
 
 public class LearningStream(string name, List<Group> groups) : IEnumerable
 {
@@ -26,7 +26,10 @@ public class LearningStream(string name, List<Group> groups) : IEnumerable
             var newStudents = new List<Student>();
             for (var j = 0; j < 30; j++)
             {
-                var student = new Student(fullName: Faker.Name.FullName(),
+                var student = new Student(id: j,
+                    firstName: Faker.Name.First(),
+                    middleName: Faker.Name.Middle(),
+                    lastName: Faker.Name.Last(),
                     studentNumber: random.Next(1, 1000),
                     birthDate: DateOnly.FromDateTime(Faker.Identification.DateOfBirth()));
                 newStudents.Add(student);

@@ -1,19 +1,12 @@
-﻿namespace OOP_Seminar3;
+﻿namespace OOP_Seminar4;
 
-public class Student(string fullName, int studentNumber, DateOnly birthDate) : IComparable
+public class Student(int id, string firstName, string middleName, string lastName, int studentNumber, DateOnly birthDate) : User(id, firstName, middleName, lastName)
 {
-    public string FullName { get; } = fullName;
-    public int StudentNumber { get; set; } = studentNumber;
+    public int StudentNumber { get;} = studentNumber;
     public DateOnly BirthDate { get; init; } = birthDate;
 
     public override string ToString()
     {
-        return FullName + ":" + StudentNumber;
-    }
-    
-    public int CompareTo(object? o)
-    {
-        if(o is Student student) return string.Compare(FullName, student.FullName, StringComparison.Ordinal);
-        throw new ArgumentException("Некорректное значение параметра");
+        return $"{Id}: {FirstName} {MiddleName} {LastName}";
     }
 }

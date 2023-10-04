@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 
-namespace OOP_Seminar3;
+namespace OOP_Seminar4;
 
 public class Group: IEnumerable<Student>, IEnumerator<Student>
 {
@@ -56,6 +56,6 @@ public class Group: IEnumerable<Student>, IEnumerator<Student>
     
     public void Sort()
     {
-        _students.Sort(0, _students.Count, new StudentComparator());
+        _students.Sort(new UserComparator<Student>());
     }
 }
