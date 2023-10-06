@@ -2,10 +2,10 @@
 
 public abstract class User(int id, string firstName, string middleName, string lastName)
 {
-    public int Id { get; } = id;
-    public string FirstName { get; } = firstName;
-    public string MiddleName { get; } = middleName;
-    public string LastName { get; } = lastName;
+    public int Id { get; init; } = id;
+    public string FirstName { get; init; } = firstName;
+    public string MiddleName { get; init; } = middleName;
+    public string LastName { get; init; } = lastName;
     
     public int CompareTo(object? o)
     {

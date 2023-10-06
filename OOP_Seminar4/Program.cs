@@ -15,7 +15,8 @@ for (var i = 0; i < 5; i++)
 }
 
 var testGroup = new Group("testGroup", someStudents);
-var groupService = new LearningGroupService(new List<Group>() {testGroup});
+
+var controller = new StudentController(new List<Group>() { testGroup });
 
 Console.WriteLine("===========================");
 Console.WriteLine(testGroup);
@@ -25,13 +26,13 @@ Console.WriteLine("=======Удаление по имени========");
 Console.Write("Введите Id на удаление: ");
 int deleteId;
 while (!int.TryParse(Console.ReadLine(), out deleteId)) { }
-groupService.RemoveById(deleteId);
+controller.RemoveStudent(deleteId);
 
 Console.WriteLine(testGroup);
 
 
 Console.WriteLine("=======Сортировка========");
-testGroup.Sort();
+controller.Sort();
 Console.WriteLine(testGroup);
 
 Console.WriteLine("=======Домашняя работа========");
